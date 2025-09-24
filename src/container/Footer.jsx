@@ -118,7 +118,7 @@ const Footer = () => {
               <span>Email - info@kodnest.com</span>
             </a>
           </div>
-          <button className="flex items-center space-x-2 px-6 py-3 bg-yellow-400 text-gray-900 font-bold rounded-lg shadow-md transition duration-300 hover:bg-yellow-500">
+          <button className="flex items-center space-x-2 px-6 py-3 bg-gray-900 text-white font-bold rounded-lg shadow-md transition duration-300 hover:bg-gray-500">
             <span>Register for Demo</span>
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 13.5L12 11.5l-3.5 4h7z" />

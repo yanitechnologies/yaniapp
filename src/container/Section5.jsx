@@ -38,7 +38,7 @@ const Section5 = () => {
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">
             Creating professional websites has never been easier, today with Essentials you can build awesome websites in no time!
           </p>
-          <button className="mt-6 px-6 py-3 border border-gray-400 text-gray-700 rounded-md font-medium transition duration-300 hover:bg-gray-100">
+          <button className="mt-6 px-6 py-3 border  bg-gray-900 border-gray-400 text-white rounded-md font-medium transition duration-300 hover:bg-gray-500">
             Check our blog
           </button>
         </div>

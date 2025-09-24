@@ -80,7 +80,7 @@ const Section1 = () => {
                 </div>
               </div>
 
-              <button type="submit" className="w-full py-3 mt-4 text-white font-bold rounded-md bg-gray-800 hover:bg-yellow-600 transition duration-300">
+              <button type="submit" className="w-full py-3 mt-4 text-white font-bold rounded-md bg-gray-800 hover:bg-gray-500 transition duration-300">
                 REGISTER NOW
               </button>
             </form>
