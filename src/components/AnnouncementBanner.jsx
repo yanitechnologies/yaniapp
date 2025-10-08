@@ -9,7 +9,7 @@ const AnnouncementBanner = () => {
     // After the fade-out animation is complete, hide the component
     setTimeout(() => {
       setIsVisible(false);
-    }, 500); // This duration should match the Tailwind transition duration
+    }, 500); // This duration matches the Tailwind transition duration
   };
 
   if (!isVisible) {
@@ -17,23 +17,35 @@ const AnnouncementBanner = () => {
   }
 
   const bannerClasses = `
-    bg-neutral-900 text-white p-4 text-center relative
+    bg-black text-white p-3 text-center relative
     transition-opacity duration-500 ease-in-out
     ${isFadingOut ? 'opacity-0' : 'opacity-100'}
   `;
 
   return (
     <div className={bannerClasses}>
-      <p className="text-base md:text-lg">
-        📢 **New!** Check out our latest premium course on Fullstack Development.
-      </p>
+      <div className="container mx-auto flex items-center justify-center">
+        <p className="text-sm md:text-base font-medium pr-10">
+          🔥 **Enrollment Open!** Master **Data Science** or **Full Stack (MERN/Java)** with Industry Experts. 
+          <a 
+            href="#training" 
+            className="ml-2 font-bold underline hover:text-gray-400 transition-colors duration-300"
+            onClick={handleDismiss} // Dismiss the banner when the user clicks the link
+          >
+            Explore Courses →
+          </a>
+        </p>
+      </div>
+      
+      {/* Dismiss Button */}
       <button 
         onClick={handleDismiss} 
-        className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300"
+        className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300 p-1"
+        aria-label="Dismiss announcement"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-5 w-5"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

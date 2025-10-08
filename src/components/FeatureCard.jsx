@@ -2,11 +2,13 @@ import React from 'react';
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
-    <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-      <div className="text-yellow-500 mb-4">
+    // Card styling updated to use subtle shadows and dark text
+    <div className="bg-gray-50 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-500 border border-gray-100 text-left">
+      {/* Icon color changed to Black */}
+      <div className="text-black mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </div>
   );

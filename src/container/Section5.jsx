@@ -1,45 +1,49 @@
 import React from 'react';
-import BlogCard from '../components/BlogCard';
+import BlogCard from '../components/BlogCard'; // Assuming the monochromatic BlogCard is imported
 
-const Section5 = () => {
+const BlogAndUpdatesSection = () => {
   const blogPosts = [
     {
       id: 1,
+      // Using relevant placeholder images matching the tech focus
       imageUrl: 'https://images.unsplash.com/photo-1542831371-32f22b826f74?q=80&w=2670&auto=format&fit=crop',
-      categories: ['Finding a Job', 'Get Inspired', 'Industry News'],
+      categories: ['Career Advice', 'Full Stack', 'Placement Tips'],
       title: 'From Classroom to Cubicle: A Day in the Life of a Junior Java Developer',
       date: 'December 7, 2024',
     },
     {
       id: 2,
       imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop',
-      categories: ['Career Advice', 'Industry News', 'Learning Tips'],
-      title: 'The Top 10 Spring Boot Features Every Java Developer Should Master',
+      categories: ['Data Science', 'Tech Trends', 'Learning Tips'],
+      title: 'The Top 5 Python Libraries Every Data Scientist Must Master',
       date: 'December 6, 2024',
     },
     {
       id: 3,
       imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop',
-      categories: ['Career Advice', 'Industry News'],
-      title: '7 Essential Skills Every Full Stack Developer Needs in 2025',
+      categories: ['Networking', 'Career Advice'],
+      title: '7 Essential Skills Every Network Engineer Needs in 2025',
       date: 'December 3, 2024',
     },
   ];
 
   return (
-    <section className="bg-gray-50 py-16 px-4 sm:px-8">
+    // No anchor ID is strictly needed for navigation, but we'll use a descriptive one just in case
+    <section id="blog" className="bg-white py-16 md:py-24 px-6 lg:px-10 border-t border-gray-100">
       <div className="container mx-auto">
         <div className="text-center lg:text-left mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Get daily updates and ideas
+          <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
+            Insights & Updates
             <br />
-            from our team of experts.
+            From Our Industry Experts.
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">
-            Creating professional websites has never been easier, today with Essentials you can build awesome websites in no time!
+            Stay ahead of the curve with articles on tech trends, career growth, and market insights curated by the YANI Tech team.
           </p>
-          <button className="mt-6 px-6 py-3 border  bg-gray-900 border-gray-400 text-white rounded-md font-medium transition duration-300 hover:bg-gray-500">
-            Check our blog
+          
+          {/* CTA Button - Black/White Monochromatic Scheme */}
+          <button className="mt-6 px-8 py-3 bg-black text-white rounded-full font-bold transition duration-300 hover:bg-gray-700 shadow-lg">
+            Read Our Full Blog
           </button>
         </div>
 
@@ -60,4 +64,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default BlogAndUpdatesSection;
