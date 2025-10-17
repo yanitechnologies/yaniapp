@@ -72,7 +72,7 @@ func main() {
 
 	r.Static("/assets", "./dist/assets")
 	r.StaticFile("/", "./dist/index.html")
-	r.StaticFile("/favicon.ico", "./dist/favicon.ico")
+	r.StaticFile("/favicon.ico", "./dist/vite.svg")		
 
 	r.NoRoute(func(c *gin.Context) {
 		c.File("./dist/index.html")
