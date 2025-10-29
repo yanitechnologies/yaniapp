@@ -1,0 +1,47 @@
+name: 🚀 Deploy to EC2
+
+on:
+  push:
+    branches:
+      - dev  # Change if your deploy branch is different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔐 Deploy to EC2 via SSH (using .pem key)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu                  # default for Ubuntu EC2 AMIs
+          key: ${{ secrets.EC2_SSH_KEY }}   # your PEM file content
+          port: 22
+          script: |
+            echo "===== 🚀 Starting deployment on EC2 ====="
+
+            echo "🛑 Stopping existing container (if any)..."
+            docker stop yaniapp_container || true
+
+            echo "🗑️ Removing old container..."
+            docker rm yaniapp_container || true
+
+            echo "🧹 Cleaning up unused Docker images..."
+            docker image prune -af || true
+
+            echo "🔐 Logging into GitHub Container Registry..."
+            echo "${{ secrets.PAT_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+
+            echo "⬇️ Pulling latest yaniapp image..."
+            docker pull ghcr.io/yanitechnologies/yaniapp:latest
+
+            echo "🚀 Running new container..."
+            docker run -d \
+              --name yaniapp_container \
+              -p 8080:8080 \
+              ghcr.io/yanitechnologies/yaniapp:latest
+
+            echo "✅ Deployment completed successfully!"
