@@ -25,6 +25,6 @@ dist-ssr
 
 .env
 tmp
-script.sh
+push.sh
 server
 yanitechnologies.pem
